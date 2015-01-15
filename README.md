@@ -27,12 +27,12 @@ Images
 Usage
 -----
 
-- **base-dev + mosquitto-dev**
+- **base-dev, mosquitto-dev**
 ```
-    $ docker run --rm -v /home/sanji/project:/data sanji/base-dev:armhf /bin/bash
+    $ docker run -it --rm -v /home/sanji/project:/data sanji/base-dev:armhf /bin/bash
 ```
 - **python-dev**
-Default [script]() will run `pip wheel` for you. Just mount all your python bundles and run:
+Default [script](https://github.com/Sanji-IO/dev-images/blob/master/python-dev/scripts/build_wheels.sh) will run `pip wheel` for you. Just mount all your python bundles and run:
 ```
     $ docker run --rm -v /home/sanji/project:/data sanji/python-dev:armhf
 ```
