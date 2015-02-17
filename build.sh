@@ -10,10 +10,10 @@ fi
 cd $1
 
 IMAGE=${1:-'base-dev'}
-ARCH=${2:-x86}
+ARCH=${2:-amd_x64}
 TAG=latest
 
-if [ $ARCH=="armhf" ]; then
+if [ $ARCH == "armhf" ]; then
     TAG=armhf
     cp Dockerfile Dockerfile.tmp
     sed -e "s|debian:stable|mazzolino/armhf-debian|" \
@@ -23,6 +23,6 @@ fi
 
 (docker build --tag=sanji/$IMAGE:$TAG .) || true
 
-if [ $ARCH=="armhf" ]; then
+if [ $ARCH == "armhf" ]; then
     mv Dockerfile.tmp Dockerfile
 fi
