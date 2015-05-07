@@ -12,7 +12,9 @@ You have to install [qemu-user-static](https://wiki.debian.org/QemuUserEmulation
 
 Images
 ------
-**Base**: `debian:stable` (for x86_64), `mazzolino/armhf-debian` (for armhf)
+**Base**: `debian:wheezy` (for x86_64), `mazzolino/armhf-debian:wheezy` (for armhf)
+
+**Repository**: add prefix `armhf-` for armhf repository name
 
 - **base-dev**
     + build-essential
@@ -23,13 +25,15 @@ Images
 - base-dev > **python-dev**
     + python
     + pip (with wheel)
+- mosquitto-dev > **debpkg-dev**
+    + debhelper
 
 Usage
 -----
 
-- **base-dev, mosquitto-dev**
+- **base-dev, mosquitto-dev, debpkg-dev**
 ```
-    $ docker run -it --rm -v /home/sanji/project:/data sanji/base-dev:armhf /bin/bash
+    $ docker run -it --rm -v /home/sanji/project:/data sanji/armhf-base-dev:wheezy /bin/bash
 ```
 - **python-dev**
 Default [script](https://github.com/Sanji-IO/dev-images/blob/master/python-dev/scripts/build_wheels.sh) will run `pip wheel` for you. Just mount all your python bundles and run:
@@ -63,6 +67,11 @@ This section is for who wants to build armhf images by yourself(not recommended,
 - **python-dev**
 ```
     $ ./build python-dev armhf
+```
+
+- **debpkg-dev**
+```
+    $ ./build debpkg-dev armhf
 ```
 
 Appendix: Image tree layout

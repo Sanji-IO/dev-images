@@ -1,4 +1,4 @@
-FROM debian:stable
+FROM debian:wheezy
 
 MAINTAINER Zack YL Shih <zackyl.shih@moxa.com>
 

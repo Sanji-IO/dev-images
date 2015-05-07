@@ -1,4 +1,4 @@
-FROM sanji/base-dev:stable
+FROM sanji/base-dev:wheezy
 
 MAINTAINER Zack YL Shih <zackyl.shih@moxa.com>
 
