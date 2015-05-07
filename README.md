@@ -13,6 +13,7 @@ You have to install [qemu-user-static](https://wiki.debian.org/QemuUserEmulation
 Images
 ------
 **Base**: `debian:wheezy` (for x86_64), `mazzolino/armhf-debian:wheezy` (for armhf)
+
 **Repository**: add prefix `armhf-` for armhf repository name
 
 - **base-dev**
@@ -24,7 +25,7 @@ Images
 - base-dev > **python-dev**
     + python
     + pip (with wheel)
- - mosquitto-dev > **debpkg-dev**
+- mosquitto-dev > **debpkg-dev**
     + debhelper
 
 Usage
